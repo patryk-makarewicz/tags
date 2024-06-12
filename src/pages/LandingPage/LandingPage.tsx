@@ -6,9 +6,11 @@ import { PageLayout } from '../../layout';
 export const LandingPage = () => {
   const { t } = useTranslation();
 
-  const { data } = useGetSearchTags('React');
+  const { data: tagsList } = useGetTagsList();
+  const { data: searchTags } = useGetSearchTags('React');
 
-  console.log(data);
+  console.log(tagsList);
+  console.log(searchTags);
 
   return (
     <PageLayout>
