@@ -2,7 +2,7 @@ export type TagsModel = {
   id: string;
   createdTime: string;
   fields: {
-    availableTags: string;
+    name: string;
   };
 };
 

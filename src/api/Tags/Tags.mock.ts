@@ -8,21 +8,21 @@ export const getTagsListMock = () => {
         id: 'recOOCGhyxR83tpnt',
         createdTime: '2021-11-03T11:06:10.000Z',
         fields: {
-          availableTags: 'Jogi',
+          name: 'Jogi',
         },
       },
       {
         id: 'recOOCGhyxR83ynpt',
         createdTime: '2021-11-04T11:07:10.000Z',
         fields: {
-          availableTags: 'User',
+          name: 'User',
         },
       },
       {
         id: 'recOOCGhyxR83yaat',
         createdTime: '2021-11-05T11:07:10.000Z',
         fields: {
-          availableTags: 'Jan',
+          name: 'Jan',
         },
       },
     ],
