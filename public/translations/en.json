@@ -1,0 +1,8 @@
+{
+  "hello": "Hello there!",
+  "header": "Vite App",
+
+  "footer": {
+    "copyright": "Copyright Ⓒ {{year}} makaDev Patryk Makarewicz"
+  }
+}
