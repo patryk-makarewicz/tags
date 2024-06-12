@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 
-import { useGetTagsList } from '../../hooks/useGetTagsList';
-import { PageLayout } from '../../layout/PageLayout';
+import { useGetSearchTags, useGetTagsList } from '../../hooks';
+import { PageLayout } from '../../layout';
 
 export const LandingPage = () => {
   const { t } = useTranslation();
 
-  const { data } = useGetTagsList();
+  const { data } = useGetSearchTags('React');
 
   console.log(data);
 
