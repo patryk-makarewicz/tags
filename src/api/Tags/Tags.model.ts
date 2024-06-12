@@ -9,3 +9,11 @@ export type TagsModel = {
 export type TagsDTO = {
   records: TagsModel[];
 };
+
+export type SaveTagModel = {
+  records: {
+    fields: {
+      name: string;
+    };
+  }[];
+};
