@@ -1,1 +1,3 @@
-export const QueryKey = {};
+export const QueryKey = {
+  getTagsList: 'getTagsList',
+};
