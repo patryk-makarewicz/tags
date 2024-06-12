@@ -17,3 +17,7 @@ export type SaveTagModel = {
     };
   }[];
 };
+
+export type DeleteTagModel = {
+  id: string;
+};

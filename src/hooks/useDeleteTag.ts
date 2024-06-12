@@ -2,14 +2,14 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 
 import { QueryKey, TagsAPI } from '../api';
-import { SaveTagModel } from '../api/Tags';
+import { DeleteTagModel } from '../api/Tags';
 
-export const useSaveTags = () => {
+export const useDeleteTag = () => {
   const queryClient = useQueryClient();
 
-  const { mutate, isSuccess, isError, isPending } = useMutation<SaveTagModel, AxiosError, SaveTagModel>({
-    mutationFn: (data: SaveTagModel) => TagsAPI.saveTags(data),
-    mutationKey: [QueryKey.saveTags],
+  const { mutate, isSuccess, isError, isPending } = useMutation<DeleteTagModel, AxiosError, DeleteTagModel>({
+    mutationFn: (data: DeleteTagModel) => TagsAPI.deleteTag(data),
+    mutationKey: [QueryKey.deleteTag],
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [QueryKey.getSavedTags] });
     },

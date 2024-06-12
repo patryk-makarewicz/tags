@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import { useGetSearchTags, useSaveTags, useGetSavedTags } from '../../hooks';
+import { useGetSearchTags, useSaveTags, useGetSavedTags, useDeleteTag } from '../../hooks';
 import { PageLayout } from '../../layout';
 
 type SearchInput = {
@@ -15,6 +15,9 @@ export const LandingPage = () => {
   const searchRef = useRef<HTMLInputElement>(null);
 
   const { data: savedTags } = useGetSavedTags();
+  const { data: searchTags, refetch } = useGetSearchTags(searchRef.current?.value);
+  const { mutate: saveTags } = useSaveTags();
+  const { mutate: deleteTag } = useDeleteTag();
 
   const { register, handleSubmit } = useForm<SearchInput>();
   const onSubmit: SubmitHandler<SearchInput> = (data) =>
@@ -25,9 +28,6 @@ export const LandingPage = () => {
         },
       })),
     });
-
-  const { data: searchTags, refetch } = useGetSearchTags(searchRef.current?.value);
-  const { mutate: saveTags } = useSaveTags();
 
   return (
     <PageLayout>
@@ -57,7 +57,13 @@ export const LandingPage = () => {
       </div>
       <div>
         <h4>Saved Your tags</h4>
-        <ul>{savedTags?.map((tag) => <li key={tag.id}>{tag.fields.name}</li>)}</ul>
+        <ul>
+          {savedTags?.map((tag) => (
+            <li key={tag.id}>
+              {tag.fields.name} <button onClick={() => deleteTag({ id: tag.id })}>X</button>
+            </li>
+          ))}
+        </ul>
       </div>
     </PageLayout>
   );

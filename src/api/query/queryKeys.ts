@@ -3,4 +3,5 @@ export const QueryKey = {
   getSearchTags: 'getSearchTags',
   getSavedTags: 'getSavedTags',
   saveTags: 'saveTags',
+  deleteTag: 'deleteTag',
 };
