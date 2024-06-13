@@ -1,4 +1,8 @@
+import { X } from 'lucide-react';
+
 import { TagsModel } from '../../../api/Tags';
+import { Button } from '../../Button';
+import * as Styled from './Tag.styles';
 
 type TagProps = {
   tag: TagsModel;
@@ -6,8 +10,11 @@ type TagProps = {
 };
 export const Tag = ({ tag, onDelete }: TagProps) => {
   return (
-    <li>
-      {tag.fields.name} <button onClick={() => onDelete(tag.id)}>X</button>
-    </li>
+    <Styled.Item>
+      {tag.fields.name}{' '}
+      <Button icon onClick={() => onDelete(tag.id)}>
+        <X strokeWidth={1} size={16} />
+      </Button>
+    </Styled.Item>
   );
 };

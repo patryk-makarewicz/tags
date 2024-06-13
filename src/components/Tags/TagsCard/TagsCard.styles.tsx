@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors, fontSize, padding } from '../../../styles';
+import { colors, fontSize, fontWeight, padding } from '../../../styles';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -21,5 +21,5 @@ export const Header = styled.div`
 
 export const Title = styled.p`
   font-size: ${fontSize.l};
-  font-weight: 700;
+  font-weight: ${fontWeight.bold};
 `;
