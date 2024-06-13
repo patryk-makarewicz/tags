@@ -13,5 +13,12 @@
 
   "messages": {
     "failed": "Wystpł bład podczas pobierania danych"
+  },
+
+  "mock": {
+    "cms": "CMS AI",
+    "text": "Analizuj text",
+    "tags": "Najbardziej popularne tagi",
+    "info": "Zbyt mało tagów. Dodaj jeszcze 1 aby poprawić widoczność artykułu"
   }
 }

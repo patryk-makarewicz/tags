@@ -7,6 +7,7 @@ export * from './Tags/TagsCard';
 export * from './Tags/TagsManager';
 export * from './Tags/AvailableTags';
 export * from './Tags/SearchTags';
+export * from './Tags/MockContent';
 export * from './Input';
 export * from './Label';
 export * from './Button';

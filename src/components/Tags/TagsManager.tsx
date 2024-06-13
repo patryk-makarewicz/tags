@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { SearchInputTag } from '../../api/Tags';
-import { AvailableTags, Divider, SavedTagsList, SearchTags, Spinner, TagsCard } from '../../components';
+import { AvailableTags, Divider, MockContent, SavedTagsList, SearchTags, TagsCard } from '../../components';
 import { useGetSearchTags, useSaveTags, useGetSavedTags, useDeleteTag, useDebounce } from '../../hooks';
 
 export const TagsManager = () => {
@@ -49,6 +49,8 @@ export const TagsManager = () => {
         isSavedTagsError={isSavedTagsError}
         onDelete={deleteTag}
       />
+      <Divider />
+      <MockContent />
     </TagsCard>
   );
 };
