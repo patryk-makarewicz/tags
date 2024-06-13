@@ -2,10 +2,27 @@ export type TagsModel = {
   id: string;
   createdTime: string;
   fields: {
-    availableTags: string;
+    name: string;
   };
 };
 
 export type TagsDTO = {
   records: TagsModel[];
+};
+
+export type SaveTagModel = {
+  records: {
+    fields: {
+      name: string;
+    };
+  }[];
+};
+
+export type DeleteTagModel = {
+  id: string;
+};
+
+export type SearchInputTag = {
+  query: string[];
+  search: string;
 };

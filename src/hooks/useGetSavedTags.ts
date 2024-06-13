@@ -3,12 +3,11 @@ import { useQuery } from '@tanstack/react-query';
 import { TagsAPI } from '../api';
 import { QueryKey } from '../api/query';
 
-export const useGetSearchTags = (query: string | undefined) => {
+export const useGetSavedTags = () => {
   const { data, isLoading, isFetching, isError, refetch } = useQuery({
-    queryKey: [QueryKey],
-    queryFn: () => TagsAPI.getSearchTags(query!),
+    queryKey: [QueryKey.getSavedTags],
+    queryFn: TagsAPI.getSavedTags,
     refetchOnWindowFocus: false,
-    enabled: !!query && query.length > 0,
   });
 
   return {
