@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { SearchInputTag } from '../../api/Tags';
-import { AvailableTags, Divider, MockContent, SavedTagsList, SearchTags, TagsCard } from '../../components';
+import { AvailableTags, Divider, MockContent, SavedTagsList, SearchTags, Spinner, TagsCard } from '../../components';
 import { useGetSearchTags, useSaveTags, useGetSavedTags, useDeleteTag, useDebounce } from '../../hooks';
 
 export const TagsManager = () => {
@@ -10,9 +10,13 @@ export const TagsManager = () => {
   const searchWatch = useDebounce(watch('search'), 300);
 
   const { data: savedTags, isLoading: isSavedTagsLoading, isError: isSavedTagsError } = useGetSavedTags();
-  const { mutate: saveTags } = useSaveTags();
-  const { mutate: deleteTag } = useDeleteTag();
-  const { data: searchTags, refetch } = useGetSearchTags(searchWatch);
+  const { mutate: saveTags, isPending: isSaveTagsLoading } = useSaveTags();
+  const { mutate: deleteTag, isPending: isDeleteTagLoading, deleteTagIds } = useDeleteTag();
+  const {
+    data: searchTags,
+    refetch: refetchSearchTags,
+    isLoading: isSearchTagsLoading,
+  } = useGetSearchTags(searchWatch);
 
   const onHandleResetForm = () => {
     reset();
@@ -32,7 +36,7 @@ export const TagsManager = () => {
 
   useEffect(() => {
     if (searchWatch?.length > 0) {
-      refetch();
+      refetchSearchTags();
     }
   }, [searchWatch]);
 
@@ -41,16 +45,30 @@ export const TagsManager = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <SearchTags register={register} searchWatch={searchWatch} onHandleResetForm={onHandleResetForm} />
         <Divider />
-        <AvailableTags savedTags={savedTags} searchTags={searchTags} searchWatch={searchWatch} register={register} />
+        <AvailableTags
+          savedTags={savedTags}
+          searchTags={searchTags}
+          searchWatch={searchWatch}
+          register={register}
+          isSearchTagsLoading={isSearchTagsLoading}
+          isSaveTagsLoading={isSaveTagsLoading}
+        />
       </form>
-      <SavedTagsList
-        savedTags={savedTags}
-        isSavedTagsLoading={isSavedTagsLoading}
-        isSavedTagsError={isSavedTagsError}
-        onDelete={deleteTag}
-      />
-      <Divider />
-      <MockContent />
+      {searchWatch === undefined && <Spinner width="24px" height="24px" />}
+      {searchWatch?.length === 0 && (
+        <>
+          <SavedTagsList
+            savedTags={savedTags}
+            isSavedTagsLoading={isSavedTagsLoading}
+            isSavedTagsError={isSavedTagsError}
+            onDelete={deleteTag}
+            isDeleteTagLoading={isDeleteTagLoading}
+            deleteTagIds={deleteTagIds}
+          />
+          <Divider />
+          <MockContent />
+        </>
+      )}
     </TagsCard>
   );
 };

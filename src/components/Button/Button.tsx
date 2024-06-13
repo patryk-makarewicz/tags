@@ -1,6 +1,7 @@
 import type { ComponentProps } from 'react';
 import { MouseEventHandler } from 'react';
 
+import { Spinner } from '../Spinner';
 import * as Styled from './Button.styles';
 
 type Props = {
@@ -12,6 +13,6 @@ type Props = {
 
 export const Button = ({ children, onClick, icon, loading, ...rest }: ComponentProps<'button'> & Props) => (
   <Styled.Button $icon={icon} $loading={loading} onClick={onClick} {...rest}>
-    {children}
+    {loading ? <Spinner width="23px" height="23px" /> : children}
   </Styled.Button>
 );

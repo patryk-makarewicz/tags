@@ -8,7 +8,9 @@
 
   "tags": {
     "header": "Tagi",
-    "searchPlaceholder": "Wyszukaj grupę lub tag"
+    "searchPlaceholder": "Wyszukaj grupę lub tag",
+    "save": "Zapisz",
+    "noTags": "Brak zapisanych tagów"
   },
 
   "messages": {
