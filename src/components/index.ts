@@ -8,3 +8,4 @@ export * from './Tags/TagsManager';
 export * from './Tags/AvailableTags';
 export * from './Input';
 export * from './Label';
+export * from './Button';

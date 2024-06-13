@@ -1,8 +1,7 @@
 import { UseFormRegister } from 'react-hook-form';
 
 import { SearchInputTag, TagsModel } from '../../../api/Tags';
-import { Input } from '../../Input';
-import { Label } from '../../Label';
+import { Button, Input, Label } from '../../../components';
 
 type AvailableTagsProps = {
   savedTags: TagsModel[];
@@ -27,9 +26,9 @@ export const AvailableTags = ({ savedTags, searchTags, searchWatch, register }: 
               </div>
             );
           })}
+          <Button type="submit">Zapisz</Button>
         </div>
       )}
-      <button type="submit">Zapisz</button>
     </div>
   );
 };
