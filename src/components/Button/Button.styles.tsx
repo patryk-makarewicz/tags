@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { colors, fontSize, fontWeight } from '../../styles';
 
 type ButtonProps = {
-  icon?: boolean;
+  $icon?: boolean;
   $loading?: boolean;
 };
 
@@ -17,8 +17,8 @@ export const Button = styled.button<ButtonProps>`
   cursor: pointer;
   transition: all 0.5s;
 
-  ${({ icon }) =>
-    icon
+  ${({ $icon }) =>
+    $icon
       ? css`
           background-color: inherit;
           color: var(--text-color);

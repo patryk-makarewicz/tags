@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const Button = ({ children, onClick, icon, loading, ...rest }: ComponentProps<'button'> & Props) => (
-  <Styled.Button icon={icon} $loading={loading} onClick={onClick} {...rest}>
+  <Styled.Button $icon={icon} $loading={loading} onClick={onClick} {...rest}>
     {children}
   </Styled.Button>
 );
