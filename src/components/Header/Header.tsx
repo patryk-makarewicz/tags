@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
+import makaDevLogo from '../../assets/makaDev.png';
 import * as Styled from './Header.styles';
 
 export const Header = () => {
@@ -7,7 +8,10 @@ export const Header = () => {
 
   return (
     <Styled.Header>
-      <h1>{t('header')}</h1>
+      <Styled.InnerWrapper>
+        <Styled.Logo src={makaDevLogo} alt="makaDev logo" />
+        <Styled.Title>{t('header')}</Styled.Title>
+      </Styled.InnerWrapper>
     </Styled.Header>
   );
 };

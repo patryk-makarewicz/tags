@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-import { zIndex } from '../../styles';
+import { fontSize, padding, zIndex } from '../../styles';
 
 export const Header = styled.header`
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
   max-width: 1440px;
   height: 60px;
@@ -14,5 +13,22 @@ export const Header = styled.header`
   background-color: var(--background-secondary-color);
   position: sticky;
   top: 0px;
+  padding: ${padding.s};
   z-index: ${zIndex.header};
+`;
+
+export const InnerWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
+
+export const Title = styled.h1`
+  font-size: ${fontSize.xl};
+  letter-spacing: 1px;
+`;
+
+export const Logo = styled.img`
+  width: 40px;
+  height: 40px;
 `;
