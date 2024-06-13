@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
+import { SavedTagsList } from '../../components';
 import { useGetSearchTags, useSaveTags, useGetSavedTags, useDeleteTag, useDebounce } from '../../hooks';
 import { PageLayout } from '../../layout';
 
@@ -71,14 +72,7 @@ export const LandingPage = () => {
         </form>
       </div>
       <div>
-        <h4>Saved Your tags</h4>
-        <ul>
-          {savedTags?.map((tag) => (
-            <li key={tag.id}>
-              {tag.fields.name} <button onClick={() => deleteTag({ id: tag.id })}>X</button>
-            </li>
-          ))}
-        </ul>
+        <SavedTagsList savedTags={savedTags} onDelete={deleteTag} />
       </div>
     </PageLayout>
   );
