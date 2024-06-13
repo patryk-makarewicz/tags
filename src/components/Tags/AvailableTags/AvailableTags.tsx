@@ -2,6 +2,7 @@ import { UseFormRegister } from 'react-hook-form';
 
 import { SearchInputTag, TagsModel } from '../../../api/Tags';
 import { Button, Input, Label } from '../../../components';
+import * as Styled from './AvailableTags.styles';
 
 type AvailableTagsProps = {
   savedTags: TagsModel[];
@@ -12,23 +13,28 @@ type AvailableTagsProps = {
 
 export const AvailableTags = ({ savedTags, searchTags, searchWatch, register }: AvailableTagsProps) => {
   return (
-    <div>
+    <Styled.Wrapper>
       {searchWatch?.length > 0 && (
-        <div>
-          <h4>Tags list to select:</h4>
+        <>
           {searchTags.map((tag) => {
             const selectedTag = savedTags.some((saved) => saved.fields.name === tag.fields.name);
 
             return (
-              <div key={tag.id}>
-                <Input type="checkbox" value={tag.fields.name} disabled={selectedTag} {...register('query')} />
+              <Styled.Item key={tag.id}>
+                <Input
+                  type="checkbox"
+                  value={tag.fields.name}
+                  disabled={selectedTag}
+                  width="13px"
+                  {...register('query')}
+                />
                 <Label>{tag.fields.name}</Label>
-              </div>
+              </Styled.Item>
             );
           })}
           <Button type="submit">Zapisz</Button>
-        </div>
+        </>
       )}
-    </div>
+    </Styled.Wrapper>
   );
 };
