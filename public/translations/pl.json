@@ -1,6 +1,6 @@
 {
-  "hello": "Hello there!",
-  "header": "Vite App",
+  "hello": "Cześć!",
+  "header": "Tags App",
 
   "footer": {
     "copyright": "Copyright Ⓒ {{year}} makaDev Patryk Makarewicz"

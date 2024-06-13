@@ -6,22 +6,22 @@ i18n
   .use(Backend)
   .use(initReactI18next)
   .init({
-    lng: 'en',
+    lng: 'pl',
     backend: {
       /* translation file path */
-      loadPath: '/translations/{{lng}}.json'
+      loadPath: '/translations/{{lng}}.json',
     },
-    fallbackLng: 'en',
+    fallbackLng: 'pl',
     debug: false,
     /* can have multiple namespace, in case you want to divide a huge translation into smaller pieces and load them on demand */
     keySeparator: '.',
     interpolation: {
       escapeValue: false,
-      formatSeparator: ','
+      formatSeparator: ',',
     },
     react: {
-      useSuspense: false
-    }
+      useSuspense: false,
+    },
   });
 
 export default i18n;
