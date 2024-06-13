@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoint, fontSize, zIndex } from '../../styles';
+import { breakpoint, fontSize, padding, zIndex } from '../../styles';
 
 export const Footer = styled.footer`
   display: flex;
@@ -15,6 +15,7 @@ export const Footer = styled.footer`
   background-color: var(--background-secondary-color);
   position: relative;
   top: 0;
+  padding: ${padding.s};
   z-index: ${zIndex.footer};
 
   @media screen and (min-width: ${breakpoint.l}) {

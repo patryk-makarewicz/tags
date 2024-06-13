@@ -4,5 +4,23 @@
 
   "footer": {
     "copyright": "Copyright Ⓒ {{year}} makaDev Patryk Makarewicz"
+  },
+
+  "tags": {
+    "header": "Tagi",
+    "searchPlaceholder": "Wyszukaj grupę lub tag",
+    "save": "Zapisz",
+    "noTags": "Brak zapisanych tagów"
+  },
+
+  "messages": {
+    "failed": "Wystpł bład podczas pobierania danych"
+  },
+
+  "mock": {
+    "cms": "CMS AI",
+    "text": "Analizuj text",
+    "tags": "Najbardziej popularne tagi",
+    "info": "Zbyt mało tagów. Dodaj jeszcze 1 aby poprawić widoczność artykułu"
   }
 }

@@ -12,8 +12,10 @@ export const useSaveTags = () => {
     mutationKey: [QueryKey.saveTags],
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [QueryKey.getSavedTags] });
+      //TODO: add success notification
     },
     onError: (error: AxiosError) => {
+      //TODO: add error notification
       console.error('Error:', error.message);
     },
   });

@@ -5,3 +5,4 @@ export * from './usePhotoLoading';
 export * from './useSaveTags';
 export * from './useGetSavedTags';
 export * from './useDeleteTag';
+export * from './useUniqueArray';

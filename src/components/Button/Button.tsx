@@ -1,13 +1,18 @@
 import type { ComponentProps } from 'react';
 import { MouseEventHandler } from 'react';
 
+import { Spinner } from '../Spinner';
+import * as Styled from './Button.styles';
+
 type Props = {
   children: React.ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  icon?: boolean;
+  loading?: boolean;
 };
 
-export const Button = ({ children, onClick, ...rest }: ComponentProps<'button'> & Props) => (
-  <button onClick={onClick} {...rest}>
-    {children}
-  </button>
+export const Button = ({ children, onClick, icon, loading, ...rest }: ComponentProps<'button'> & Props) => (
+  <Styled.Button $icon={icon} $loading={loading} onClick={onClick} {...rest}>
+    {loading ? <Spinner width="23px" height="23px" /> : children}
+  </Styled.Button>
 );
