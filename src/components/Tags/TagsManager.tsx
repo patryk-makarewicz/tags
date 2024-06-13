@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { SearchInputTag } from '../../api/Tags';
-import { AvailableTags, Divider, SavedTagsList, SearchTags, TagsCard } from '../../components';
+import { AvailableTags, Divider, SavedTagsList, SearchTags, Spinner, TagsCard } from '../../components';
 import { useGetSearchTags, useSaveTags, useGetSavedTags, useDeleteTag, useDebounce } from '../../hooks';
 
 export const TagsManager = () => {
   const { register, handleSubmit, watch, reset } = useForm<SearchInputTag>();
   const searchWatch = useDebounce(watch('search'), 300);
 
-  const { data: savedTags } = useGetSavedTags();
+  const { data: savedTags, isLoading: isSavedTagsLoading, isError: isSavedTagsError } = useGetSavedTags();
   const { mutate: saveTags } = useSaveTags();
   const { mutate: deleteTag } = useDeleteTag();
   const { data: searchTags, refetch } = useGetSearchTags(searchWatch);
@@ -39,11 +39,16 @@ export const TagsManager = () => {
   return (
     <TagsCard>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <SearchTags register={register} onHandleResetForm={onHandleResetForm} />
+        <SearchTags register={register} searchWatch={searchWatch} onHandleResetForm={onHandleResetForm} />
         <Divider />
         <AvailableTags savedTags={savedTags} searchTags={searchTags} searchWatch={searchWatch} register={register} />
       </form>
-      <SavedTagsList savedTags={savedTags} onDelete={deleteTag} />
+      <SavedTagsList
+        savedTags={savedTags}
+        isSavedTagsLoading={isSavedTagsLoading}
+        isSavedTagsError={isSavedTagsError}
+        onDelete={deleteTag}
+      />
     </TagsCard>
   );
 };

@@ -5,7 +5,6 @@ import { colors, fontSize, fontWeight, padding } from '../../../styles';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
   width: 300px;
   padding: ${padding.m};
   border: 1px solid ${colors.light};
@@ -17,6 +16,7 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-bottom: 16px;
 `;
 
 export const Title = styled.p`

@@ -9,5 +9,9 @@
   "tags": {
     "header": "Tagi",
     "searchPlaceholder": "Wyszukaj grupę lub tag"
+  },
+
+  "messages": {
+    "failed": "Wystpł bład podczas pobierania danych"
   }
 }

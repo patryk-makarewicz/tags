@@ -4,7 +4,7 @@ import { TagsAPI } from '../api';
 import { QueryKey } from '../api/query';
 
 export const useGetSavedTags = () => {
-  const { data, isLoading, isFetching, isError, refetch } = useQuery({
+  const { data, isLoading, isFetching, isError } = useQuery({
     queryKey: [QueryKey.getSavedTags],
     queryFn: TagsAPI.getSavedTags,
     refetchOnWindowFocus: false,
@@ -14,6 +14,5 @@ export const useGetSavedTags = () => {
     data: data ? data.records : [],
     isLoading: isLoading || isFetching,
     isError,
-    refetch,
   };
 };

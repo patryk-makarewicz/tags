@@ -11,4 +11,5 @@ export const Item = styled.li`
   font-weight: ${fontWeight.medium};
   border-radius: 8px;
   border: 1px solid ${colors.gray2};
+  height: 36px;
 `;

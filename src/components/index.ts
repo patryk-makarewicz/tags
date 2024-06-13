@@ -11,3 +11,4 @@ export * from './Input';
 export * from './Label';
 export * from './Button';
 export * from './Divider';
+export * from './Spinner';

@@ -9,18 +9,21 @@ import * as Styled from './SearchTags.styles';
 type SearchTagsProps = {
   register: UseFormRegister<SearchInputTag>;
   onHandleResetForm: () => void;
+  searchWatch: string;
 };
 
-export const SearchTags = ({ register, onHandleResetForm }: SearchTagsProps) => {
+export const SearchTags = ({ register, onHandleResetForm, searchWatch }: SearchTagsProps) => {
   const { t } = useTranslation();
 
   return (
     <Styled.Wrapper>
       <Search strokeWidth={2} size={20} />
       <Input defaultValue="" placeholder={t('tags.searchPlaceholder')} autoComplete="off" {...register('search')} />
-      <Button icon onClick={onHandleResetForm}>
-        <X strokeWidth={1} size={16} />
-      </Button>
+      {searchWatch?.length > 0 && (
+        <Button icon onClick={onHandleResetForm}>
+          <X strokeWidth={1} size={16} />
+        </Button>
+      )}
     </Styled.Wrapper>
   );
 };
