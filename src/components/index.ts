@@ -13,3 +13,4 @@ export * from './Label';
 export * from './Button';
 export * from './Divider';
 export * from './Spinner';
+export * from './Placeholder';

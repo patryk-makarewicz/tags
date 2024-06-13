@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { fontSize, padding, zIndex } from '../../styles';
+
+type LogoProps = {
+  $hide: boolean;
+};
 
 export const Header = styled.header`
   display: flex;
@@ -28,7 +32,22 @@ export const Title = styled.h1`
   letter-spacing: 1px;
 `;
 
-export const Logo = styled.img`
+export const LogoWrapper = styled.div`
   width: 40px;
   height: 40px;
+  overflow: hidden;
+`;
+
+export const Logo = styled.img<LogoProps>`
+  transition: ease 1s all;
+  ${({ $hide }) =>
+    $hide
+      ? css`
+          opacity: 0;
+        `
+      : css`
+          opacity: 1;
+        `}
+  width: 100%;
+  height: 100%;
 `;
