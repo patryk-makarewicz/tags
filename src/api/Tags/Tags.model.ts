@@ -21,3 +21,8 @@ export type SaveTagModel = {
 export type DeleteTagModel = {
   id: string;
 };
+
+export type SearchInputTag = {
+  query: string[];
+  search: string;
+};

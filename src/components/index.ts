@@ -3,3 +3,7 @@ export * from './Footer';
 export * from './Header';
 export * from './Tags/Tag';
 export * from './Tags/SavedTagsList';
+export * from './Tags/TagsCard';
+export * from './Tags/TagsManager';
+export * from './Input';
+export * from './Label';
