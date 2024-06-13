@@ -37,7 +37,7 @@ export const Button = styled.button<ButtonProps>`
           color: ${colors.white};
           font-weight: ${fontWeight.semiBold};
           font-size: ${fontSize.m};
-          padding: 8px 16px;
+          padding: 4px 16px;
 
           &:hover {
             opacity: 0.8;

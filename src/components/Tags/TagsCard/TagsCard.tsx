@@ -10,7 +10,7 @@ export const TagsCard = ({ children }: { children: React.ReactNode }) => {
   return (
     <Styled.Wrapper>
       <Styled.Header>
-        <h4>{t('tags.header')}</h4>
+        <Styled.Title>{t('tags.header')}</Styled.Title>
         <Button icon onClick={() => console.log('Click button close tags card')}>
           <X strokeWidth={2} size={20} />
         </Button>

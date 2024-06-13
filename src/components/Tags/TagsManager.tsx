@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { SearchInputTag } from '../../api/Tags';
-import { AvailableTags, Input, SavedTagsList, TagsCard } from '../../components';
+import { AvailableTags, Divider, SavedTagsList, SearchTags, TagsCard } from '../../components';
 import { useGetSearchTags, useSaveTags, useGetSavedTags, useDeleteTag, useDebounce } from '../../hooks';
 
 export const TagsManager = () => {
@@ -35,10 +35,8 @@ export const TagsManager = () => {
   return (
     <TagsCard>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <h3>Tags list to select:</h3>
-          <Input defaultValue="" placeholder="Search" autoComplete="off" {...register('search')} />
-        </div>
+        <SearchTags register={register} />
+        <Divider />
         <AvailableTags savedTags={savedTags} searchTags={searchTags} searchWatch={searchWatch} register={register} />
       </form>
       <SavedTagsList savedTags={savedTags} onDelete={deleteTag} />

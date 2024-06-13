@@ -6,6 +6,8 @@ export * from './Tags/SavedTagsList';
 export * from './Tags/TagsCard';
 export * from './Tags/TagsManager';
 export * from './Tags/AvailableTags';
+export * from './Tags/SearchTags';
 export * from './Input';
 export * from './Label';
 export * from './Button';
+export * from './Divider';
