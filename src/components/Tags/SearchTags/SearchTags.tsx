@@ -8,16 +8,17 @@ import * as Styled from './SearchTags.styles';
 
 type SearchTagsProps = {
   register: UseFormRegister<SearchInputTag>;
+  onHandleResetForm: () => void;
 };
 
-export const SearchTags = ({ register }: SearchTagsProps) => {
+export const SearchTags = ({ register, onHandleResetForm }: SearchTagsProps) => {
   const { t } = useTranslation();
 
   return (
     <Styled.Wrapper>
       <Search strokeWidth={2} size={20} />
       <Input defaultValue="" placeholder={t('tags.searchPlaceholder')} autoComplete="off" {...register('search')} />
-      <Button icon onClick={() => console.log('Click button clear input')}>
+      <Button icon onClick={onHandleResetForm}>
         <X strokeWidth={1} size={16} />
       </Button>
     </Styled.Wrapper>

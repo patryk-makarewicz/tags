@@ -14,6 +14,10 @@ export const TagsManager = () => {
   const { mutate: deleteTag } = useDeleteTag();
   const { data: searchTags, refetch } = useGetSearchTags(searchWatch);
 
+  const onHandleResetForm = () => {
+    reset();
+  };
+
   const onSubmit: SubmitHandler<SearchInputTag> = (data) => {
     saveTags({
       records: data.query.map((tag) => ({
@@ -23,7 +27,7 @@ export const TagsManager = () => {
       })),
     });
 
-    reset();
+    onHandleResetForm();
   };
 
   useEffect(() => {
@@ -35,7 +39,7 @@ export const TagsManager = () => {
   return (
     <TagsCard>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <SearchTags register={register} />
+        <SearchTags register={register} onHandleResetForm={onHandleResetForm} />
         <Divider />
         <AvailableTags savedTags={savedTags} searchTags={searchTags} searchWatch={searchWatch} register={register} />
       </form>
