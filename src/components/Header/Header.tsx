@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
 import makaDevLogo from '../../assets/makaDev.png';
+import { Placeholder, SocialMedia } from '../../components';
 import { usePhotoLoading } from '../../hooks';
-import { Placeholder } from '../Placeholder';
 import * as Styled from './Header.styles';
 
 export const Header = () => {
@@ -18,6 +18,7 @@ export const Header = () => {
         </Styled.LogoWrapper>
         <Styled.Title>{t('header')}</Styled.Title>
       </Styled.InnerWrapper>
+      <SocialMedia />
     </Styled.Header>
   );
 };

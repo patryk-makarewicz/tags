@@ -14,3 +14,4 @@ export * from './Button';
 export * from './Divider';
 export * from './Spinner';
 export * from './Placeholder';
+export * from './SocialMedia';

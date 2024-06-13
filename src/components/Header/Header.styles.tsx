@@ -9,6 +9,7 @@ type LogoProps = {
 export const Header = styled.header`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   max-width: 1440px;
   height: 60px;
