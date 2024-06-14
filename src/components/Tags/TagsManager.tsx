@@ -6,10 +6,15 @@ import { AvailableTags, Divider, MockContent, SavedTagsList, SearchTags, Spinner
 import { useGetSearchTags, useSaveTags, useGetSavedTags, useDeleteTag, useDebounce } from '../../hooks';
 
 export const TagsManager = () => {
-  const { register, handleSubmit, watch, reset } = useForm<SearchInputTag>();
+  const { register, handleSubmit, watch, reset } = useForm<SearchInputTag>({
+    defaultValues: {
+      search: '',
+      query: [],
+    },
+  });
   const searchWatch = useDebounce(watch('search'), 300);
 
-  const { data: savedTags, isLoading: isSavedTagsLoading, isError: isSavedTagsError } = useGetSavedTags();
+  const { data: savedTags, isError: isSavedTagsError } = useGetSavedTags();
   const { mutate: saveTags, isPending: isSaveTagsLoading } = useSaveTags();
   const { mutate: deleteTag, isPending: isDeleteTagLoading, deleteTagIds } = useDeleteTag();
   const {
@@ -59,7 +64,6 @@ export const TagsManager = () => {
         <>
           <SavedTagsList
             savedTags={savedTags}
-            isSavedTagsLoading={isSavedTagsLoading}
             isSavedTagsError={isSavedTagsError}
             onDelete={deleteTag}
             isDeleteTagLoading={isDeleteTagLoading}
