@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/setupTest.ts"],
+  "include": ["src", "src/setupTest.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

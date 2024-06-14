@@ -9,7 +9,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['src/setupTest.ts'],
+    setupFiles: ['src/setupTest.tsx'],
     coverage: {
       reportsDirectory: '.coverage',
       all: true,
@@ -19,7 +19,9 @@ export default defineConfig({
         'src/**/*.model.*',
         'src/**/*.styles.*',
         'src/**/*.d.ts',
+        'src/main.tsx',
         'src/api',
+        'src/components/App',
         'src/styles',
         'src/layout',
       ],

@@ -15,7 +15,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Archivo', sans-serif;
+   font-family: 'Archivo', sans-serif;
   color: #242424;
   background-color: #ffffff;
   font-size: 16px;
