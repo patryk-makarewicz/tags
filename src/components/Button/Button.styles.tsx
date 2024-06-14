@@ -8,6 +8,7 @@ type ButtonProps = {
 };
 
 export const Button = styled.button<ButtonProps>`
+  font-family: 'Archivo', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
