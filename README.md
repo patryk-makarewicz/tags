@@ -23,7 +23,7 @@ This is the app to search tags from db.
 
 To watch click [here]
 
-[here]: https://patryk-makarewicz.netlify.app
+[here]: https://patryk-makarewicz-tags.netlify.app/
 
 ## Available Scripts
 
