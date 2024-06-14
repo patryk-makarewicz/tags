@@ -46,7 +46,7 @@ export const TagsManager = () => {
   }, [searchWatch]);
 
   return (
-    <TagsCard>
+    <TagsCard data-testid="tags-card">
       <form onSubmit={handleSubmit(onSubmit)}>
         <SearchTags register={register} searchWatch={searchWatch} onHandleResetForm={onHandleResetForm} />
         <Divider />
