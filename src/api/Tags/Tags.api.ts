@@ -19,7 +19,12 @@ export const getSearchTags = (query: string) =>
 export const getSavedTags = () =>
   useAPImocks
     ? getTagsListMock()
-    : axios.get<TagsDTO>(`${BASE_URL}/savedTags?view=default`, { headers }).then(({ data }) => data);
+    : axios
+        .get<TagsDTO>(
+          `${BASE_URL}/savedTags?view=default&sort%5B0%5D%5Bfield%5D=create&sort%5B0%5D%5Bdirection%5D=desc`,
+          { headers }
+        )
+        .then(({ data }) => data);
 
 export const saveTags = (data: SaveTagModel) => {
   return axios.post<SaveTagModel>(`${BASE_URL}/savedTags`, data, { headers }).then(({ data }) => data);

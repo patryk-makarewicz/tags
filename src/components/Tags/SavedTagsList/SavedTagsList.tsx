@@ -38,7 +38,7 @@ export const SavedTagsList = ({
 
   return (
     <Styled.List>
-      {savedTags?.map((tag) => (
+      {savedTags.map((tag) => (
         <Tag
           key={tag.id}
           tag={tag}
