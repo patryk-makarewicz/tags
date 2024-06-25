@@ -2,7 +2,16 @@ import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { SearchInputTag } from '../../api/Tags';
-import { AvailableTags, Divider, MockContent, SavedTagsList, SearchTags, Spinner, TagsCard } from '../../components';
+import {
+  AvailableTags,
+  Divider,
+  MockContent,
+  SavedTagsList,
+  SearchTags,
+  Spinner,
+  TagsCard,
+  TagsCount,
+} from '../../components';
 import { useGetSearchTags, useSaveTags, useGetSavedTags, useDeleteTag, useDebounce } from '../../hooks';
 
 export const TagsManager = () => {
@@ -71,6 +80,8 @@ export const TagsManager = () => {
           />
           <Divider />
           <MockContent />
+          <Divider />
+          <TagsCount count={savedTags.length} />
         </>
       )}
     </TagsCard>

@@ -10,7 +10,11 @@
     "header": "Tagi",
     "searchPlaceholder": "Wyszukaj grupę lub tag",
     "save": "Zapisz",
-    "noTags": "Brak zapisanych tagów"
+    "noTags": "Brak zapisanych tagów",
+    "info": "Zbyt mało tagów. Dodaj jeszcze {{number}} aby poprawić widoczność artykułu",
+    "infoGood": "Świetnie, odpowiednia liczba tagów. Twój artykułu dobrze widać",
+    "infoTagsNumberLess": "Słabo",
+    "infoTagsNumberGood": "Dobrze"
   },
 
   "messages": {
@@ -20,7 +24,6 @@
   "mock": {
     "cms": "CMS AI",
     "text": "Analizuj text",
-    "tags": "Najbardziej popularne tagi",
-    "info": "Zbyt mało tagów. Dodaj jeszcze 1 aby poprawić widoczność artykułu"
+    "tags": "Najbardziej popularne tagi"
   }
 }
