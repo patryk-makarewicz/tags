@@ -2,7 +2,6 @@ import { Info } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import { colors } from '../../../styles';
-import { Divider } from '../../Divider';
 import * as Styled from './TagsCount.styles';
 
 export const TagsCount = ({ count }: { count: number }) => {
@@ -19,7 +18,6 @@ export const TagsCount = ({ count }: { count: number }) => {
 
   return (
     <>
-      <Divider />
       <Styled.Container>
         {count <= 3 && (
           <Styled.RectangleText $color={colors.warning}>{t('tags.infoTagsNumberLess')}</Styled.RectangleText>

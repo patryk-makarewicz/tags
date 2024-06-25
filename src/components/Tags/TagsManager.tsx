@@ -80,6 +80,7 @@ export const TagsManager = () => {
           />
           <Divider />
           <MockContent />
+          <Divider />
           <TagsCount count={savedTags.length} />
         </>
       )}
