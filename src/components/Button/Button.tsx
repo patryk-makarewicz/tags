@@ -1,7 +1,8 @@
 import type { ComponentProps } from 'react';
 import { MouseEventHandler } from 'react';
 
-import { Spinner } from '../Spinner';
+import { Spinner } from '@/components/Spinner';
+
 import * as Styled from './Button.styles';
 
 export type ButtonProps = {

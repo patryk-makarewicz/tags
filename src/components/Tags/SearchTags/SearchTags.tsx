@@ -2,8 +2,9 @@ import { Search, X } from 'lucide-react';
 import { UseFormRegister } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import { SearchInputTag } from '../../../api/Tags';
-import { Button, Input } from '../../../components';
+import { SearchInputTag } from '@/api/Tags';
+import { Button, Input } from '@/components';
+
 import * as Styled from './SearchTags.styles';
 
 type SearchTagsProps = {

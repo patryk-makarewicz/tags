@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { TagsAPI } from '../api';
-import { QueryKey } from '../api/query';
+import { TagsAPI } from '@/api';
+import { QueryKey } from '@/api/query';
 
 export const useGetTagsList = () => {
   const { data, isLoading, isFetching, isError, refetch } = useQuery({

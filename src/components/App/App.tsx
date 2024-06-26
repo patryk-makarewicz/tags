@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { Layout } from '../../layout';
-import { LandingPage } from '../../pages/LandingPage';
-import GlobalStyles from '../../styles/GlobalStyles';
+import { Layout } from '@/layout';
+import { LandingPage } from '@/pages/LandingPage';
+import GlobalStyles from '@/styles/GlobalStyles';
 
 export const App = () => {
   return (

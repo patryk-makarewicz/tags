@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { fontSize, padding, zIndex } from '../../styles';
+import { fontSize, padding, zIndex } from '@/styles';
 
 type LogoProps = {
   $hide: boolean;

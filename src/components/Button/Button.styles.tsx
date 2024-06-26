@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colors, fontSize, fontWeight } from '../../styles';
+import { colors, fontSize, fontWeight } from '@/styles';
 
 type ButtonProps = {
   $icon?: boolean;

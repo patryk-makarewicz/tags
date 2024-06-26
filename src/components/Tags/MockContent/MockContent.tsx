@@ -1,7 +1,8 @@
 import { Tag, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-import { colors } from '../../../styles';
+import { colors } from '@/styles';
+
 import * as Styled from './MockContent.styles';
 
 export const MockContent = () => {

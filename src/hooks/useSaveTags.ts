@@ -1,8 +1,8 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 
-import { QueryKey, TagsAPI } from '../api';
-import { SaveTagModel } from '../api/Tags';
+import { QueryKey, TagsAPI } from '@/api';
+import { SaveTagModel } from '@/api/Tags';
 
 export const useSaveTags = () => {
   const queryClient = useQueryClient();

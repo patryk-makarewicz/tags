@@ -1,7 +1,8 @@
 import { X } from 'lucide-react';
 
-import { TagsModel } from '../../../api/Tags';
-import { Button, Spinner } from '../../../components';
+import { TagsModel } from '@/api/Tags';
+import { Button, Spinner } from '@/components';
+
 import * as Styled from './Tag.styles';
 
 type TagProps = {

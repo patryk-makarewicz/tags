@@ -1,8 +1,9 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 
-import { QueryKey, TagsAPI } from '../api';
-import { DeleteTagModel } from '../api/Tags';
+import { QueryKey, TagsAPI } from '@/api';
+import { DeleteTagModel } from '@/api/Tags';
+
 import { useUniqueArray } from './useUniqueArray';
 
 export const useDeleteTag = () => {

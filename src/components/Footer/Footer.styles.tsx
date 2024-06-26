@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoint, fontSize, padding, zIndex } from '../../styles';
+import { breakpoint, fontSize, padding, zIndex } from '@/styles';
 
 export const Footer = styled.footer`
   display: flex;

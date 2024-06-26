@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors, fontSize, fontWeight, padding } from '../../../styles';
+import { colors, fontSize, fontWeight, padding } from '@/styles';
 
 export const Wrapper = styled.div`
   display: flex;

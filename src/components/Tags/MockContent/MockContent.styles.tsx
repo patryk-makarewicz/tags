@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { fontSize } from '../../../styles';
+import { fontSize } from '@/styles';
 
 type TextProps = {
   $color?: string;

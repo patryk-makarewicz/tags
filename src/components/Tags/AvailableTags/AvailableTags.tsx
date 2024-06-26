@@ -1,8 +1,9 @@
 import { UseFormRegister } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import { SearchInputTag, TagsModel } from '../../../api/Tags';
-import { Button, Input, Label, Spinner } from '../../../components';
+import { SearchInputTag, TagsModel } from '@/api/Tags';
+import { Button, Input, Label, Spinner } from '@/components';
+
 import * as Styled from './AvailableTags.styles';
 
 type AvailableTagsProps = {
