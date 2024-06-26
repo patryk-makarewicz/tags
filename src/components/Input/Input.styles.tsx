@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { fontSize } from '../../styles';
+import { fontSize } from '@/styles';
 
 export const Input = styled.input`
   width: 100%;

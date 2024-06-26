@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
-import { TagsModel } from '../../../api/Tags';
-import { Tag } from '../../../components';
+import { TagsModel } from '@/api/Tags';
+import { Spinner, Tag } from '@/components';
+
 import * as Styled from './SavedTagsList.styles';
 
 type SavedTagsListProps = {
@@ -10,6 +11,7 @@ type SavedTagsListProps = {
   isSavedTagsError: boolean;
   isDeleteTagLoading: boolean;
   deleteTagIds: readonly string[];
+  isSavedTagsLoading: boolean;
 };
 export const SavedTagsList = ({
   savedTags,
@@ -17,6 +19,7 @@ export const SavedTagsList = ({
   isSavedTagsError,
   isDeleteTagLoading,
   deleteTagIds,
+  isSavedTagsLoading,
 }: SavedTagsListProps) => {
   const { t } = useTranslation();
 
@@ -24,6 +27,14 @@ export const SavedTagsList = ({
     return (
       <Styled.Container>
         <Styled.Text>{t('messages.failed')}</Styled.Text>
+      </Styled.Container>
+    );
+  }
+
+  if (isSavedTagsLoading) {
+    return (
+      <Styled.Container>
+        <Spinner width="24px" height="24px" />
       </Styled.Container>
     );
   }

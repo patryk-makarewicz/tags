@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
-import { SearchInputTag } from '../../api/Tags';
+import { SearchInputTag } from '@/api/Tags';
 import {
   AvailableTags,
   Divider,
@@ -11,8 +11,8 @@ import {
   Spinner,
   TagsCard,
   TagsCount,
-} from '../../components';
-import { useGetSearchTags, useSaveTags, useGetSavedTags, useDeleteTag, useDebounce } from '../../hooks';
+} from '@/components';
+import { useGetSearchTags, useSaveTags, useGetSavedTags, useDeleteTag, useDebounce } from '@/hooks';
 
 export const TagsManager = () => {
   const { register, handleSubmit, watch, reset } = useForm<SearchInputTag>({
@@ -23,7 +23,7 @@ export const TagsManager = () => {
   });
   const searchWatch = useDebounce(watch('search'), 300);
 
-  const { data: savedTags, isError: isSavedTagsError } = useGetSavedTags();
+  const { data: savedTags, isError: isSavedTagsError, isLoading: isSavedTagsLoading } = useGetSavedTags();
   const { mutate: saveTags, isPending: isSaveTagsLoading } = useSaveTags();
   const { mutate: deleteTag, isPending: isDeleteTagLoading, deleteTagIds } = useDeleteTag();
   const {
@@ -77,6 +77,7 @@ export const TagsManager = () => {
             onDelete={deleteTag}
             isDeleteTagLoading={isDeleteTagLoading}
             deleteTagIds={deleteTagIds}
+            isSavedTagsLoading={isSavedTagsLoading}
           />
           <Divider />
           <MockContent />

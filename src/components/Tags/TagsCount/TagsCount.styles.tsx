@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors, fontSize, fontWeight } from '../../../styles';
+import { colors, fontSize, fontWeight } from '@/styles';
 
 type RectangleProps = {
   $backgroundColor: string;

@@ -9,15 +9,7 @@
   "importOrderSeparation": true,
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
-    "^api/(.*)$",
-    "^hooks/(.*)$",
-    "^pages/(.*)$",
-    "^components/(.*)$",
-    "^utils/(.*)$",
-    "^helpers/(.*)$",
-    "^assets/(.*)$",
-    "^layout/(.*)$",
-    "^styles/(.*)$",
+    "^(@/api|@/hooks|@/components|@/pages|@/layout|@/assets|@/styles)/?",
     "^[./]"
   ],
   "plugins": ["@trivago/prettier-plugin-sort-imports"]

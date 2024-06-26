@@ -1,5 +1,6 @@
-import GithubLogo from '../../assets/github.svg';
-import LinkedInLogo from '../../assets/linkedin.svg';
+import GithubLogo from '@/assets/github.svg';
+import LinkedInLogo from '@/assets/linkedin.svg';
+
 import * as Styled from './SocialMedia.styles';
 
 export const SocialMedia = () => (

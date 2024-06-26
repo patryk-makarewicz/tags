@@ -1,7 +1,8 @@
 import { X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '../../Button';
+import { Button } from '@/components/Button';
+
 import * as Styled from './TagsCard.styles';
 
 export const TagsCard = ({ children }: { children: React.ReactNode }) => {

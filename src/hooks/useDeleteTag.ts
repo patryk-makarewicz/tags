@@ -1,11 +1,15 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
+import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
-import { QueryKey, TagsAPI } from '../api';
-import { DeleteTagModel } from '../api/Tags';
+import { QueryKey, TagsAPI } from '@/api';
+import { DeleteTagModel } from '@/api/Tags';
+
 import { useUniqueArray } from './useUniqueArray';
 
 export const useDeleteTag = () => {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const [deleteTagIds, addDeleteTagId, removeDeleteTagId] = useUniqueArray<string>();
 
@@ -13,11 +17,11 @@ export const useDeleteTag = () => {
     mutationFn: (data: DeleteTagModel) => TagsAPI.deleteTag(data),
     mutationKey: [QueryKey.deleteTag],
     onSuccess: () => {
+      toast.success(t('messages.deleteTag'));
       queryClient.invalidateQueries({ queryKey: [QueryKey.getSavedTags] });
-      //TODO: add success notification
     },
     onError: (error: AxiosError) => {
-      //TODO: add error notification
+      toast.error(t('messages.deleteTagFailed'));
       console.error('Error:', error.message);
     },
     onMutate: (deleteTag) => {

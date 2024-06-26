@@ -1,7 +1,8 @@
 import { Info } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-import { colors } from '../../../styles';
+import { colors } from '@/styles';
+
 import * as Styled from './TagsCount.styles';
 
 export const TagsCount = ({ count }: { count: number }) => {
