@@ -18,7 +18,11 @@
   },
 
   "messages": {
-    "failed": "Wystpł bład podczas pobierania danych"
+    "failed": "Wystpł bład podczas pobierania danych",
+    "saveTag": "Tag został dodany",
+    "SaveTagFailed": "Wystpł bład podczas dodawania tagu",
+    "deleteTag": "Tag został usunięty",
+    "deleteTagFailed": "Wystpł bład podczas usuwania tagu"
   },
 
   "mock": {
